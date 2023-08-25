@@ -1,0 +1,4 @@
+<div id="notification-bar" *ngIf="notificationStatus?.status">
+    <i class="{{notificationStatus?.type}} material-icons">{{notificationStatus?.type}}</i>
+    {{notificationStatus?.message}}
+</div>

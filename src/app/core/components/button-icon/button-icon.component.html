@@ -1,0 +1,5 @@
+<button [type]="type == 'menu-toggle' ? 'button' : type" (click)="handleClick()" [attr.data-role]="type">
+    <i class="material-icons" [attr.data-role]="type">
+        <ng-content></ng-content>
+    </i>
+</button>

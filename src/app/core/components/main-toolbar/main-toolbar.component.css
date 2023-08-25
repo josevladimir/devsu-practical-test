@@ -1,0 +1,12 @@
+#bp-main-toolbar{
+    background-color: #FFF;
+    height: 64px;
+    padding: 1.6rem;
+    position: sticky;
+    top: 0px;
+}
+#bp-main-toolbar img{
+    display: block;
+    height: 100%;
+    margin: auto;
+}

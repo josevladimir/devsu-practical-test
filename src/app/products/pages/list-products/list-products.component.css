@@ -1,0 +1,92 @@
+table{
+    border-collapse: collapse;
+    padding: 1.6rem;
+    width: 100%;
+}
+table tr{
+    border-bottom: 1px solid rgba(0,0,0,.12);
+}
+table thead tr th{
+    background-color: var(--background-gray);
+    color: var(--text-gray);
+    padding: 1.6rem 0.8rem;
+    text-align: left;
+}
+table tbody tr td{
+    min-width: 150px;
+    padding: 0.4rem 0.8rem;
+}
+table thead tr th:first-child{
+    text-align: center;
+    width: 75px;
+}
+table tbody tr td:last-child{
+    min-width: 75px;
+    width: 75px;
+}
+
+.table-container{
+    overflow-x: scroll;
+}
+.table-container::-webkit-scrollbar {
+    height: 0.8rem;
+}
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 5px;
+}
+.logo-box{
+    align-items: center;
+    background-color: var(--background-blue);
+    border-radius: 50%;
+    color: #FFF;
+    display: flex;
+    font-size: 2rem;
+    font-weight: 600;
+    height: 48px;
+    justify-content: center;
+    margin: auto;
+    width: 48px;
+}
+
+#paginator select{
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 5px;
+    padding: 0.5rem 1.6rem;
+}
+#products-list{
+    background-color: #FFF;
+    padding: 1.6rem;
+}
+#search-bar{
+    margin-top: 6.4rem;
+}
+#search-box{
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 5px;
+    padding: 0.8rem;
+    width: 200px;
+}
+
+.contextual-menu-container{
+    position: relative;
+}
+#contextual-menu{
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 4px;
+    min-width: 100px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    z-index: 999;
+}
+#contextual-menu li{
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    display: block;
+    padding: 0.8rem 1.6rem;
+}
+#contextual-menu li:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,.12);
+}

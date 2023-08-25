@@ -1,0 +1,15 @@
+::ng-deep .form-field input{
+    display: block;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 4px;
+    padding: 0.8rem;
+    width: 100%;
+}
+::ng-deep .form-field label{
+    font-weight: 600;
+}
+
+span{
+    color: red;
+    font-size: 1.2rem;
+}

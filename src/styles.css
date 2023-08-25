@@ -1,1 +1,65 @@
+@font-face {
+    font-family: 'Prelo';
+    src: url('./assets/fonts/prelo/Prelo-Book.ttf');
+}
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --background-blue: #222d5726;
+    --background-gray: #F2F6F9;
+    --background-yellow: #ffde084e;
+    --primary-blue: #222D57;
+    --primary-yellow: #FFDD08;
+    --text-gray: #4A4A4A;
+}
+
+*{
+    box-sizing: border-box;
+    color: var(--text-gray);
+    font-family: 'Prelo', sans-serif;
+    font-size: 1.4rem;
+    margin: 0px;
+    padding: 0px;
+}
+html{
+    background-color: var(--background-gray);
+    font-size: 62.5%;
+}
+
+button{
+    cursor: pointer;
+}
+button:disabled{
+    cursor: auto;
+}
+li{
+    list-style: none;
+}
+p{
+    font-size: 1.6rem;
+}
+
+/*Structure Classes*/
+.actions-bar{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 1.6rem 0px;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.spinner{
+    animation: rotar 1s infinite;
+}
+
+@keyframes rotar {
+    from {
+        transform: rotateZ(0deg);
+    } to {
+        transform: rotateZ(360deg);
+    }
+}

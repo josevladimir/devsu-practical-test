@@ -1,0 +1,49 @@
+<div id="search-bar" class="actions-bar container">
+    <input type="text" placeholder="Buscar..." id="search-box" [formControl]="searchControl">
+    <bp-button [redirectTo]="['add']">Agregar</bp-button>
+</div>
+
+<div id="products-list" class="container">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Logo</th>
+                    <th>Nombre del producto</th>
+                    <th>Descripción</th>
+                    <th>Fecha de liberación</th>
+                    <th>Fecha de reestructuración</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of productsFiltered; let i = index">
+                    <td>
+                        <img [src]="product.logo" alt="logo producto" class="logo-box" (error)="loadPlaceholder($event.target)">
+                    </td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.date_release | date: 'dd/MM/YYYY'}}</td>
+                    <td>{{product.date_revision | date: 'dd/MM/YYY'}}</td>
+                    <td>
+                        <div class="contextual-menu-container">
+                            <bp-button-icon (onClick)="showContextualMenu(i)" type="menu-toggle">more_vert</bp-button-icon>
+                            <div id="contextual-menu" *ngIf="i == selectedItem">
+                                <li [routerLink]="['edit',product.id]">Editar</li>
+                                <li (click)="deleteProduct(product)">Eliminar</li>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="paginator" class="actions-bar">
+        <span><b>{{productsFiltered.length}} Resultados</b></span>
+        <select (change)="sliceProducts()" [(ngModel)]="amountToSlice">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+        </select>
+    </div>
+</div>

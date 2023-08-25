@@ -1,0 +1,36 @@
+
+<form *ngIf="newProductForm" [formGroup]="newProductForm">
+    <h2>{{editMode ? 'Editar Producto' : 'Formulario de Registro'}}</h2>
+
+    <div id="form-grid">
+        <bp-input label="ID" [control]="newProductForm.get('id')">
+            <input #bpInput type="text" formControlName="id">
+        </bp-input>
+
+        <bp-input label="Nombre" [control]="newProductForm.get('name')">
+            <input #bpInput type="text" formControlName="name">
+        </bp-input>
+
+        <bp-input label="Descripción" [control]="newProductForm.get('description')">
+            <input #bpInput type="text" formControlName="description">
+        </bp-input>
+
+        <bp-input label="Logo" [control]="newProductForm.get('logo')">
+            <input #bpInput type="text" formControlName="logo">
+        </bp-input>
+
+        <bp-input label="Fecha Liberación" [control]="newProductForm.get('date_release')">
+            <input #bpInput type="date" formControlName="date_release" (change)="setDates()">
+        </bp-input>
+
+        <bp-input label="Fecha Revisión" [control]="newProductForm.get('date_revision')">
+            <input #bpInput type="date" formControlName="date_revision">
+        </bp-input>
+    </div>
+
+    <div id="form-actions">
+        <bp-button color="secondary" (onClick)="resetForm()">Reiniciar</bp-button>
+        <bp-button [disabled]="newProductForm.invalid" type="submit" (onClick)="send()">Enviar</bp-button>
+    </div>
+
+</form>
